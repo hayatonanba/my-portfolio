@@ -1,4 +1,5 @@
 // libs/microcms.ts
+import type { Props } from '@/types/blogtype';
 import { createClient } from 'microcms-js-sdk';
 
 // 環境変数にMICROCMS_SERVICE_DOMAINが設定されていない場合はエラーを投げる
@@ -16,3 +17,12 @@ export const client = createClient({
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
   apiKey: process.env.MICROCMS_API_KEY,
 });
+
+// microCMSから特定の記事を取得
+export async function getBlogPost(id: string): Promise<Props> {
+  const data = await client.get({
+    endpoint: "blogs",
+    contentId: id
+  });
+  return data;
+}
