@@ -2,6 +2,7 @@ import Link from "next/link";
 import { client } from "./libs/microcms";
 import Image from "next/image";
 import type { Props } from "@/types/blogtype";
+import Header from "@/components/organisms/Header/Header";
 
 // microCMSからブログ記事を取得
 async function getBlogPosts(): Promise<Props[]> {
@@ -19,7 +20,7 @@ export default async function Home() {
 
   return (
     <main>
-      <div className=""><h1 >My Portfolio</h1></div>
+      <Header />
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
