@@ -19,7 +19,7 @@ export default async function Home() {
 
   return (
     <main>
-      <h1>ブログ記事一覧</h1>
+      <div className=""><h1 >My Portfolio</h1></div>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
