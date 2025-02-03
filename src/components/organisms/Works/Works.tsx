@@ -16,16 +16,19 @@ async function getBlogPosts(): Promise<Props[]> {
 export default async function Works() {
   const posts = await getBlogPosts();
     return (
-      <ul>
-      {posts.map((post) => (
-        <li key={post.id}>
-          <Link href={`/post/${post.id}`}>
-            <Image src={post.eyecatch.url} width={250} height={150} alt="" />
-            <h1>{post.title}</h1>
-          </Link>
-          <small>{post.publishedAt}</small>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <h1 className="flex justify-center text-4xl p-4">〜Work〜</h1>
+        <ul>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <Link href={`/post/${post.id}`}>
+              <Image src={post.eyecatch.url} width={250} height={150} alt="" className="hover:scale-110" />
+              <h1>{post.title}</h1>
+            </Link>
+            <small>{post.publishedAt}</small>
+          </li>
+        ))}
+      </ul>
+    </div>
     );
 }
