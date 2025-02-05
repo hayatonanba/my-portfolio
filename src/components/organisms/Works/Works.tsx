@@ -17,18 +17,22 @@ export default async function Works() {
   const posts = await getBlogPosts();
     return (
     <div>
-      <h1 className="flex justify-center text-4xl p-4">〜Work〜</h1>
-        <ul>
+      <h1 className="flex justify-center text-4xl p-4">〜Works〜</h1>
+      <div className="max-w-7xl mx-auto p-8">
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <li key={post.id}>
+          <div className="bg-white rounded-lg overflow-hidden shadow-lg" key={post.id}>
             <Link href={`/post/${post.id}`}>
-              <Image src={post.eyecatch.url} width={250} height={150} alt="" className="hover:scale-110" />
-              <h1>{post.title}</h1>
-            </Link>
-            <small>{post.publishedAt}</small>
-          </li>
+              <img src={post.eyecatch.url} alt="" className="w-full h-48 object-cover overflow-hidden hover:scale-105 transition-transform" />  
+              <div className="p-6">
+                <h1 className="text-xl font-bold mb-2">{post.title}</h1>
+                <small className="text-gray-600">{post.publishedAt}</small>
+              </div>
+            </Link> 
+          </div>
         ))}
       </ul>
+      </div>
     </div>
     );
 }

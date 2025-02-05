@@ -11,9 +11,6 @@ import Skill from "@/components/organisms/Skill/Skill";
 async function getBlogPosts(): Promise<Props[]> {
   const data = await client.get({
     endpoint: 'blogs', 
-    queries: {
-      limit: 5,  // 最新の5件を取得
-    },
   });
   return data.contents;
 }
@@ -32,17 +29,6 @@ export default async function Home() {
           <About />
           <Skill />
           <Works />
-          {/* <ul>
-            {posts.map((post) => (
-              <li key={post.id}>
-                <Link href={`/post/${post.id}`}>
-                  <Image src={post.eyecatch.url} width={250} height={150} alt="" />
-                  <h1>{post.title}</h1>
-                </Link>
-                <small>{post.publishedAt}</small>
-              </li>
-            ))}
-          </ul> */}
         </main>
       <Footer />
     </div>
