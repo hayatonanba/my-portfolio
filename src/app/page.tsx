@@ -22,9 +22,9 @@ export default async function Home() {
     <div>
       <Header />
         <main>
-          <div className="bg-slate-100 space-y-10 p-56">
-            <TypingAnimation className="flex justify-center text-8xl font-bold">Hi there 👋</TypingAnimation>
-            <TypingAnimation className="flex justify-center text-5xl">I love doing and learning programming.</TypingAnimation>
+          <div className="bg-slate-100 space-y-10 p-20 sm:p-56">
+            <TypingAnimation className="flex justify-center text-3xl sm:text-5xl md:text-8xl font-bold">Hi there 👋</TypingAnimation>
+            <TypingAnimation className="flex justify-center text-xl sm:text-2xl md:text-5xl">I love doing and learning programming.</TypingAnimation>
           </div>
           <About />
           <Skill />

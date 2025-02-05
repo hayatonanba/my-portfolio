@@ -10,9 +10,9 @@ export default function Footer() {
           <div className="container mx-auto flex justify-between items-center border-white border-b p-5">
             <Navbar />
             <div className="flex gap-8">
-              <Link href="https://github.com/hayatonanba"><SiGmail className="size-8" /></Link>
-              <Link href="https://github.com/hayatonanba"><FaGithub className="size-8" /></Link>
-              <Link href="https://x.com/hayatonanba0228"><FaXTwitter className="size-8" /></Link>
+              <Link href="https://github.com/hayatonanba"><SiGmail className="size-6 sm:size-8" /></Link>
+              <Link href="https://github.com/hayatonanba"><FaGithub className="size-6 sm:size-8" /></Link>
+              <Link href="https://x.com/hayatonanba0228"><FaXTwitter className="size-6 sm:size-8" /></Link>
             </div>
           </div>
           <small className="flex justify-center p-4">© 2024 My Portfolio. All rights reserved.</small>

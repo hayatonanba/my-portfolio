@@ -5,79 +5,79 @@ import { cn } from "@/lib/utils";
     {
       name: "JavaScript",
       username: "@javascript",
-      body: "I've never seen anything like this before. It's amazing. I love it.",
+      body: "私の初めてのプログラミング言語。これからも漠然と好き。",
       img: "/logo-javascript.svg",
     },
     {
       name: "TypeScript",
       username: "@typescript",
-      body: "I don't know what to say. I'm speechless. This is amazing.",
+      body: "型づけなんて最初はめんどいじゃんと思いきや、超大事だった。自覚した時成長したと思った。",
       img: "/typescript (1).svg",
     },
     {
       name: "React",
       username: "@react",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "hooksとかの理解が初学者の身でもスラスラ入ってきた。好き。",
       img: "/react-2.svg",
     },
     {
       name: "Next.js",
       username: "@nextjs",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "お前が一番すきや。お前と共に俺のエンジニア人生は始まったし続いていく予定。",
       img: "/next-js.svg",
     },
     {
       name: "Tailwindcss",
       username: "@tailwindcss",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "見ずらいのもわかる。物心ついた時からこれだったので耐性持ち。",
       img: "/tailwind-css-2.svg",
     },
     {
       name: "Express.js",
       username: "@expressjs",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "APIの基礎を学ぶ時にお世話になった。honoとか随所で面影を感じる。",
       img: "/expressjs-icon.svg",
     },
     {
       name: "Prisma",
       username: "@prisma",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "最初のORMであり、今頑張りどころのコンテンツ。",
       img: "/prisma-3.svg",
     },
     {
       name: "Firebase",
       username: "@firebase",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "NoSQLとRDBMSの差異を調べるときに使用。認証の設定のしやすさは度肝を抜いた覚えあり。",
       img: "/firebase-1.svg",
     },
     {
       name: "Supabase",
       username: "@supabase",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "とりあえずアプリ開発で使う便利でお気に入りのBaaS。",
       img: "/supabase-logo-icon.svg",
     },
     {
       name: "PostgreSQL",
       username: "@postsql",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "初めてのRDBMS。SQL文も基礎理解のためにそこそこ頑張って書いた思い出。",
       img: "/postgresql (1).svg",
     },
     {
       name: "bun",
       username: "@bun",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "npmよりはいと聞いてみたらめっちゃ早い。すご。ただlockがバイナリなのはめんどかった。",
       img: "/bun-1.svg",
     },
     {
       name: "Postman",
       username: "@postman",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "swaggerUIを使う前によく使っていた記憶。正直あんまり思うことがない。",
       img: "/postman.svg",
     },
     {
       name: "Figma",
       username: "@figma",
-      body: "I'm at a loss for words. This is amazing. I love it.",
+      body: "プラグインの知識等を身につけていくうちに知識もついて、楽しくデザインできるので好き。",
       img: "/figma-icon.svg",
     },
   ];
@@ -123,7 +123,7 @@ import { cn } from "@/lib/utils";
   export default function Skill() {
     return (
     <div className="p-7">
-      <h1 className="flex justify-center text-4xl">〜Skill〜</h1>
+      <h1 className="flex justify-center text-4xl">💻Skill</h1>
       <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
         <Marquee pauseOnHover className="[--duration:20s]">
           {firstRow.map((review) => (
