@@ -1,5 +1,3 @@
-import { client } from "./libs/microcms";
-import type { Props } from "@/types/blogtype";
 import Header from "@/components/organisms/Header/Header";
 import Footer from "@/components/organisms/Footer/Footer";
 import Works from "@/components/organisms/Works/Works";
@@ -7,16 +5,7 @@ import About from "@/components/organisms/About/About";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import Skill from "@/components/organisms/Skill/Skill";
 
-// microCMSからブログ記事を取得
-async function getBlogPosts(): Promise<Props[]> {
-  const data = await client.get({
-    endpoint: 'blogs', 
-  });
-  return data.contents;
-}
-
 export default async function Home() {
-  const posts = await getBlogPosts();
 
   return (
     <div>
