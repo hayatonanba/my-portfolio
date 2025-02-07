@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
     {
       name: "Next.js",
       username: "@nextjs",
-      body: "お前が一番すきや。お前と共に俺のエンジニア人生は始まったし続いていく予定。",
+      body: "一番好きな技術。お前と共に俺のエンジニア人生は始まったし続いていく予定。",
       img: "/next-js.svg",
     },
     {
@@ -41,7 +41,7 @@ import { cn } from "@/lib/utils";
     {
       name: "Prisma",
       username: "@prisma",
-      body: "最初のORMであり、今頑張りどころのコンテンツ。",
+      body: "最初に触れたORMであり、今頑張りどころのコンテンツ。",
       img: "/prisma-3.svg",
     },
     {
@@ -65,13 +65,13 @@ import { cn } from "@/lib/utils";
     {
       name: "bun",
       username: "@bun",
-      body: "npmよりはいと聞いてみたらめっちゃ早い。すご。ただlockがバイナリなのはめんどかった。",
+      body: "npmより爆速と聞いてみたらすごい早い。ただlockがバイナリでコンフリクトの時大変だった。",
       img: "/bun-1.svg",
     },
     {
       name: "Postman",
       username: "@postman",
-      body: "swaggerUIを使う前によく使っていた記憶。正直あんまり思うことがない。",
+      body: "swaggerUIを使う前によく使っていた記憶。",
       img: "/postman.svg",
     },
     {
@@ -123,7 +123,7 @@ import { cn } from "@/lib/utils";
   export default function Skill() {
     return (
     <div className="p-7">
-      <h1 className="flex justify-center text-4xl">💻Skill</h1>
+      <h1 id="Skill" className="flex justify-center text-4xl">💻Skill</h1>
       <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
         <Marquee pauseOnHover className="[--duration:20s]">
           {firstRow.map((review) => (

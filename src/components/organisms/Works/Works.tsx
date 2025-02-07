@@ -1,7 +1,7 @@
 import { client } from "@/app/libs/microcms";
 import type { Props } from "@/types/blogtype";
-import Image from "next/image";
 import Link from "next/link";
+import { FiUsers } from "react-icons/fi";
 
 async function getBlogPosts(): Promise<Props[]> {
   const data = await client.get({
@@ -14,7 +14,7 @@ export default async function Works() {
   const posts = await getBlogPosts();
     return (
     <div>
-      <h1 id="About" className="flex justify-center text-4xl p-4">🗂️Works</h1>
+      <h1 id="Works" className="flex justify-center text-4xl p-4">🗂️Works</h1>
       <div className="max-w-7xl mx-auto p-8">
       <ul className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {posts.map((post) => (
@@ -23,7 +23,13 @@ export default async function Works() {
               <img src={post.eyecatch.url} alt="" className="w-full h-48 object-cover overflow-hidden hover:scale-105 transition-transform" />  
               <div className="p-6">
                 <h1 className="text-xl font-bold mb-2">{post.title}</h1>
-                <small className="text-gray-600">更新日: {post.publishedAt}</small>
+                <div className="flex items-center gap-4 text-gray-600">  
+                  <small>
+                    { post.isDeployed ? "デプロイ済" : "未デプロイ" }
+                  </small>
+                  <small className="flex items-center gap-2"><FiUsers />{post.members}</small>
+                  <small>更新日: {post.publishedAt}</small>
+                </div>
               </div>
             </Link> 
           </div>

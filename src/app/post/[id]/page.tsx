@@ -21,28 +21,30 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
         <header className="mb-16">
           <h1 className="text-3xl font-medium mb-4">{post.title}</h1> 
           <p className="text-gray-600 mb-6 flex items-center flex-wrap gap-x-6">
-            <span>2024年 | Webデザイン・開発</span>
+            <span>{post.createdAt} | Webデザイン・開発</span>
             <span className="inline-flex items-center">
               <FiUsers className="w-4 h-4 mr-1" />
-              開発メンバー 4名
+              開発メンバー {post.members}名
             </span>
           </p>
           
           <div className="flex gap-4">
-            <Link 
-              href="/" 
-              className="inline-flex items-center px-4 py-2 border border-black hover:bg-black hover:text-white transition-colors"
-            >
-              <FaExternalLinkAlt className="w-4 h-4 mr-2" />
-              サイトを見る
-            </Link>
-            <Link 
-              href="/" 
-              className="inline-flex items-center px-4 py-2 border border-black hover:bg-black hover:text-white transition-colors"
+            { post.isDeployed ? 
+              <a 
+                href={post.siteLink}
+                className="inline-flex items-center px-4 py-2 border border-black hover:bg-black hover:text-white transition-colors rounded-sm"
+              >
+                <FaExternalLinkAlt className="w-4 h-4 mr-2" />
+                サイトを見る
+              </a> : "" 
+            }
+            <a
+              href={post.githubLink}
+              className="inline-flex items-center px-4 py-2 border border-black hover:bg-black hover:text-white transition-colors rounded-sm"
             >
               <FiGithub className="w-4 h-4 mr-2" />
               ソースコード
-            </Link>
+            </a>
           </div>
         </header>   
         <div className="mb-16">
@@ -62,31 +64,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
               </section>
 
               <section className="mb-12">
-                <h2 className="text-xl font-medium mb-4">主な成果</h2>
-                <ul className="list-disc list-inside text-gray-800 space-y-2">
-                  <li>以後付け足し</li>
-                  <li>以後付け足し</li>
-                  <li>以後付け足し</li>
-                </ul>
+                <h2 className="text-xl font-medium mb-4">がんばりポイント</h2>
+                <div className="text-gray-800 space-y-2">
+                  {parse(post.attemptPoint)}
+                </div>
               </section>
           </div>
 
           <div>
             <section className="mb-8">
               <h2 className="text-xl font-medium mb-4">使用技術</h2>
-              <ul className="space-y-2 text-gray-800">
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>Tailwind CSS</li>
-                <li>Next.js</li>
-              </ul>
+              <img src={post.tech.url} alt="画像が読み込めません" />
             </section>
 
             <section>
               <h2 className="text-xl font-medium mb-4">担当領域</h2>
               <ul className="space-y-2 text-gray-800">
-                <li>UI/UXデザイン</li>
-                <li>フロントエンド開発</li>
+                {parse(post.isAssign)}
               </ul>
             </section>
           </div>

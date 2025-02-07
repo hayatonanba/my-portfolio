@@ -6,4 +6,12 @@ export type Props = {
     title: string,
     content: string,
     eyecatch: MicroCMSImage,
+    members: number,
+    isDeployed: boolean,
+    createDate: MicroCMSDate,
+    siteLink: string,
+    githubLink: string,
+    attemptPoint: string,
+    tech: MicroCMSImage,
+    isAssign: string
   }&MicroCMSDate

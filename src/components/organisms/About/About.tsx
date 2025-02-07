@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function About() {
     return (
       <div className="container mx-auto p-4 sm:p-5">
-        <h1 className="flex justify-center text-2xl sm:text-3xl md:text-4xl p-5 sm:p-10">🗓️About</h1>
+        <h1 id="About" className="flex justify-center text-2xl sm:text-3xl md:text-4xl p-5 sm:p-10">🗓️About</h1>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
           <img
             src="/darts_throw_man.png" 
