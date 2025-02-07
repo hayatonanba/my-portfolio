@@ -9,5 +9,5 @@ export default {
 } satisfies Meta<T>;
 
 export const Default: StoryObj<T> = {
-    args: { children: "About", link: "/" }
+    args: { children: "About" }
 };
