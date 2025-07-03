@@ -2,6 +2,8 @@ import { client } from "@/app/libs/microcms";
 import type { Props } from "@/types/blogtype";
 import Link from "next/link";
 import { FiUsers } from "react-icons/fi";
+import dayjs from 'dayjs'
+import 'dayjs/locale/ja'
 
 async function getBlogPosts(): Promise<Props[]> {
   const data = await client.get({
@@ -12,6 +14,7 @@ async function getBlogPosts(): Promise<Props[]> {
 
 export default async function Works() {
   const posts = await getBlogPosts();
+  dayjs.locale('ja')
     return (
     <div>
       <h1 id="Works" className="flex justify-center text-4xl p-4">🗂️Works</h1>
@@ -28,7 +31,7 @@ export default async function Works() {
                     { post.isDeployed ? "デプロイ済" : "未デプロイ" }
                   </small>
                   <small className="flex items-center gap-2"><FiUsers />{post.members}</small>
-                  <small>更新日: {post.publishedAt}</small>
+                  <small>更新日: {dayjs(post.publishedAt).format('YYYY年M月D日')}</small>
                 </div>
               </div>
             </Link> 

@@ -3,11 +3,14 @@ import parse from "html-react-parser"
 import Link from "next/link";
 import { FaArrowLeft, FaExternalLinkAlt } from "react-icons/fa";
 import { FiGithub, FiUsers } from "react-icons/fi";
+import dayjs from 'dayjs'
+import 'dayjs/locale/ja'
 
 // 記事詳細ページの生成
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params; // IDを取得
   const post = await getBlogPost(id);
+    dayjs.locale('ja')
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -21,7 +24,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
         <header className="mb-16">
           <h1 className="text-3xl font-medium mb-4">{post.title}</h1> 
           <p className="text-gray-600 mb-6 flex items-center flex-wrap gap-x-6">
-            <span>{post.createdAt} | Webデザイン・開発</span>
+            <span>{dayjs(post.publishedAt).format('YYYY年M月D日')} | Webデザイン・開発</span>
             <span className="inline-flex items-center">
               <FiUsers className="w-4 h-4 mr-1" />
               開発メンバー {post.members}名
